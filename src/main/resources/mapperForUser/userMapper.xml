@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace用于绑定Dao接口 -->
+<mapper namespace="com.spring.share.dao.IUserDao">
+
+    <!-- 插入用户信息sql -->
+    <insert id="addUserInfo" keyProperty="id" useGeneratedKeys="true" parameterType="UserModel">
+        insert into userinfo(username,email,password) values (#{name},#{email},#{password})
+</insert>
+</mapper>

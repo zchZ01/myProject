@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--properties配置文件的应用-->
+    <properties resource="application.properties"/>
+
+    <!--别名的应用，一定要特别注意标签是有顺序的，不然会报异常-->
+    <typeAliases>
+        <!--这样写就是该文件中所有的"dyh.bean.User" 都用User代替了-->
+        <!--这样写有一个弊端，就是除了用户之外还有其他实体类，比如Order、Customer…… 那就要写n别名了，所以不推荐使用-->
+        <!--<typeAlias type="dyh.bean.User" alias="User"/>-->
+        <!--推荐使用包的形式-->
+        <package name="com.spring.share.model"/>
+
+    </typeAliases>
+    <!-- Mapper的位置  Mapper.xml 写Sql语句的文件的位置 -->
+    <mappers>
+        <mapper resource="mapperForUser/userMapper.xml"/>
+    </mappers>
+
+</configuration>

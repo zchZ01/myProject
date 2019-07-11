@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="/frame/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var code = $("#code").val();
+    var msg = $("#msg").val();
+    alert(code+msg)
+    parent.callback(code,msg);
+});
+</script>
+<body>
+<p th:text="${resultVO.code}"></p>
+<p th:text="${resultVO.msg}"></p>
+<input id="code" value="${resultVO.code}"  type="hidden">
+<input id="msg" value="${resultVO.msg}" type="hidden">
+</body>
+</html>
