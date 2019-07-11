@@ -43,7 +43,7 @@ public class UserController {
     }
 
     /**
-     * 7
+     *
      * 注册方法
      *
      * @return
