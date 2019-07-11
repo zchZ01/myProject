@@ -3,6 +3,7 @@ package com.spring.share.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.spring.share.logs.MyLogger;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -41,7 +42,7 @@ public class RedisConfiguration extends CachingConfigurerSupport {
                 for (Object obj : objects) {
                     sb.append(obj.toString());
                 }
-                System.out.println("调用Redis缓存Key : " + sb.toString());
+                MyLogger.info("调用Redis缓存Key : " + sb.toString());
                 return sb.toString();
             }
         };
